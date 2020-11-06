@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        // -- ------------------------------------
+        // -- Perhatian
+        // -- Khusus untuk Windows User : 
+        // -- hasil dari Copy Path harus diganti dengan double-backslash \\
+        // -- ------------------------------------
+        {
+            "name": "Odoo Arkademy (Linux)",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "console": "integratedTerminal",
+            "pythonPath": "/usr/bin/python3", // cari dengan which python3
+            "program": "/home/<user_name>/arkademy/source/12.0/odoo-bin",
+            "args": [
+                "--config=/home/<user_name>/arkademy/config/arkademy.conf",
+                // "--database=tutor1,tutor2",
+                // "--update=nama_folder1,nama_folder2"
+            ]
+        },
+        {
+            "name": "Odoo Arkademy (Windows)",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "console": "integratedTerminal",
+            // Kadang Path Python dari Windows suka error
+            // Jika tidak bisa dengan / maka ganti dengan double-backslash \ \
+            "pythonPath": "C:/Program Files/Odoo 14.0.20201101/python/python.exe", //"C:/Devel/python/python.exe", // untuk Odoo 12
+            "program": "C:/Program Files/Odoo 14.0.20201101/server/odoo-bin", //"C:/Devel/server/odoo-bin", // untuk Odoo 12
+            "args": [
+                "--config=C:/Users/meliaprisca/Desktop/Apps/programming app/ODOO/aa/DevelopElims/odoo.conf",
+                "--database=tutor1",
+             
+               
+            ]
+        }
+    ]
+}
