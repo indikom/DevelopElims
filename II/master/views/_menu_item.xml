@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <menuitem 
+            id="master_menu" 
+            name="Rekap" 
+            sequence="1"
+            />
+        <menuitem 
+            id="master_agama"
+            parent="master_menu" 
+            name="Pasien"
+            sequence="20"
+            />
+    </data>
+</odoo>

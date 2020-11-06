@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="master_agama_tree">
+            <field name="name">master.agama.tree</field>
+            <field name="model">master.agama</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="no_rm"/>
+                    <field name="pasien_id"/>
+                    <field name="no_hp"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="master_agama_form">
+            <field name="name">master.agama.form</field>
+            <field name="model">master.agama</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="no_rm"/>
+                                <field name="pasien_id"/>
+                                <field name="nip"/>
+                                <field name="tgl_lahir"/>
+                            </group>
+                            <group>
+                                <field name="jenis_kelamin"/>
+                                <field name="alamat"/>
+                                <field name="email"/>
+                                <field name="no_hp"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Kunjungan">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="tgl_periksa"/>
+                                        <field name="tgl_sampel"/>
+                                        <field name="no_mcl"/>
+                                        <field name="sampel_id"/>
+                                        <field name="no_reg"/>
+                                        <field name="pengirim"/>
+                                        <field name="penjamin"/>
+                                        <field name="kelas"/>
+                                        <field name="diagnosa"/>
+                                        <field name="ruang"/>
+                                        <field name="pembayaran"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Hasil Test">
+                                <field name="l_ids">
+                                    <tree editable="bottom">
+                                        <field name="reg"/>
+                                        <field name="test_name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="master_agama_action">
+            <field name="name">Data Pasien</field>
+            <field name="res_model">master.agama</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            id="submenu_master_agama"
+            name="Data Pasien"
+            parent="master_agama"
+            action="master_agama_action"
+        />
+
+    </data>
+</odoo>
